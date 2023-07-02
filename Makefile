@@ -13,7 +13,7 @@ CPP_FILES := $(wildcard $(SRC_DIR)/*.cpp)
 OBJ_FILES := $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(CPP_FILES))
 
 # The final executable name
-TARGET := program
+TARGET := chess
 
 # Compiler settings
 CXX := g++
