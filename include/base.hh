@@ -1,4 +1,5 @@
-#pragma once
+#ifndef BASEHH
+#define BASEHH
 #define WHITE 0
 #define BLACK 1
 #include <vector>
@@ -11,6 +12,5 @@ enum ErrCode {
     ERR_ILLEGAL_MOVE = 2,
 };
 
-class Base {
-    //TODO: add base class stuff
-};
+class Base {};
+#endif
