@@ -1,4 +1,13 @@
-#include "../include/piece.hh"
+#include "piece.hh"
+#include "board.hh"
+/*
+Initializes piece with color and type.
+*/
+Piece::Piece() {
+    this->row = -1;
+    this->col = -1;
+    this->color = -1;
+}
 Piece::Piece(int row, int col, Color color) {
     this->row = row;
     this->col = col;
@@ -17,15 +26,19 @@ void Piece::updateLegalMoves() {
 std::vector<std::array<int,2>> Piece::getLegalMoves() {
     return this->legalMoves;
 }
-
+//Moves piece to new position.
 ErrCode Piece::move(int row, int col) {
     if (isLegalMove(row, col)) {
         this->row = row;
         this->col = col;
-        Board::getInstance().lastMoveRow = row;
-        Board::getInstance().lastMoveCol = col;
-        Board::getInstance().registerMove();
+        Board::getInstance().registerMove(row, col);
         return ErrCode::ERR_OK;
     }
     return ErrCode::ERR_ILLEGAL_MOVE;
 }
+// Method to check if move is legal. Override in subclass.
+bool Piece::isLegalMove(int row, int col) {
+    return false;
+}
+
+Piece::~Piece() {}

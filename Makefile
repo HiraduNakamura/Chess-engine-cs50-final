@@ -16,9 +16,9 @@ OBJ_FILES := $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(CPP_FILES))
 TARGET := chess
 
 # Compiler settings
-CXX := clang
+CXX := g++
 #-Wall -Wextra -Iinclude -O3 -Wpedantic -s -ffunction-sections -fdata-sections -Wl,--gc-section -fno-exceptions -flto 
-CXXFLAGS := -lstdc++ -lm
+CXXFLAGS := -Wall -Wextra -Iinclude -Wpedantic -lstdc++
 
 # Default target
 all: $(TARGET)

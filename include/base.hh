@@ -1,7 +1,7 @@
 #ifndef BASEHH
 #define BASEHH
-#define WHITE 0
-#define BLACK 1
+constexpr int8_t WHITE = 0;
+constexpr int8_t BLACK = 1;
 #include <vector>
 #include <array>
 #include <cstdint>
